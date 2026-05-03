@@ -1,7 +1,24 @@
-<h1 style="color: rgb(9, 255, 0); text-align: center; font-weight: bold; position: relative;
- text-shadow: -1px 1px 1px black;margin-top: 10%; margin-bottom: 0%;">Zona De Empleados!</h1>
+<h1 style="color: rgb(9, 255, 0); text-align: left; font-size: large; font-weight: bold; position: relative;
+ text-shadow: -1px 1px 1px black;margin-top: 10%; margin-bottom: 0%;">Datos Del Empleado!</h1>
 
+<div style="background-color: rgb(205, 209, 205);
+ align-self: flex-start;padding: 18px; border-radius: 18px; margin-top: 15px; width: fit-content;">
+ <p style="display: inline-block; flex-direction: column; color: rgb(255, 230, 0);
+  font-weight: bold;text-shadow: -1px 1px 1px black;">
 
-<h1 style="color: rgb(9, 255, 0); text-align: center; font-weight: bold; position: relative;
- text-shadow: -1px 1px 1px black;margin-top: 10%; margin-bottom: 0%;">Zona De Empleados!</h1>
+     Nombre:  <small  style="color: rgb(0, 0, 0); font-weight: bold; 
+     text-shadow: -1px 1px 1px rgb(255, 255, 255);">{{nombre}}</small><br>
 
+     Apellido: <small style="color: rgb(0, 0, 0); font-weight: bold; 
+     text-shadow: -1px 1px 1px rgb(255, 255, 255);">{{apellido}}</small> <br>
+
+     Edad: <small style="color: rgb(0, 0, 0); font-weight: bold;
+      text-shadow: -1px 1px 1px rgb(255, 255, 255);">
+      
+      {{edad -40 <18 ? 'Es menor de edad ':'Es Mayor de edad'}} </small><br>
+
+     Empresa: <small style="color: rgb(0, 0, 0); font-weight: bold; 
+     text-shadow: -1px 1px 1px rgb(255, 255, 255);">{{empresa}}</small>
+ </p>
+
+</div>

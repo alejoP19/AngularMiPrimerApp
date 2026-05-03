@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './empleado.html',
   styleUrl: './empleado.css',
 })
-export class EmpleadoComponent {}
+export class EmpleadoComponent {
+
+nombre ='Josefina';
+apellido ='Arbelaez';
+edad =48;
+empresa = 'Ramo';
+
+
+}
