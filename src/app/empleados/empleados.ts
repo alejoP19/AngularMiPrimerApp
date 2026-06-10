@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
   templateUrl: './empleados.html',
   styleUrl: './empleados.css',
 })
-export class EmpleadosComponent {}
+export class EmpleadosComponent {
+  
+}
