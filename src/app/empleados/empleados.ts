@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
  import { EmpleadoComponent } from "../empleado/empleado";
+ 
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [ EmpleadoComponent],
   templateUrl: './empleados.html',
-  styleUrl: './empleados.css',
+ styleUrls: ['./empleados.css']
 })
 export class EmpleadosComponent {
   

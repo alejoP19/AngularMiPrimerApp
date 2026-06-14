@@ -1,26 +1,144 @@
-<h1 style="color: rgb(9, 255, 0); text-align: left; font-size: large; font-weight: bold; position: relative;
- text-shadow: -1px 1px 1px black;margin-top: 2%; margin-bottom: 0%;">Datos Del Empleado!</h1>
+<style>
+.intro{
+margin: 2%;
+display: flex;
+position: relative; 
+flex-direction: column; 
+align-self: flex-end;
+}
+small{
+color: rgb(0, 0, 0); 
+font-weight: bold; 
+text-shadow: -1px 1px 1px rgb(255, 255, 255);
+}
 
-<div style="background-color: rgb(205, 209, 205);
- align-self: flex-start;padding: 18px; border-radius: 18px; margin-top: 15px; width: fit-content;">
- <p style="display: inline-block; flex-direction: column; color: rgb(255, 230, 0);
-  font-weight: bold;text-shadow: -1px 1px 1px black;">
+.label-tit-empresa{
+color: rgb(168, 41, 253);
+font-weight: bold;
+margin-bottom: 5px; 
+text-shadow: -1px 1px 1px rgb(0, 0, 0),-1px 1px 1px rgb(0, 0, 0);
+}
 
-     Nombre:  <small  style="color: rgb(0, 0, 0); font-weight: bold; 
-     text-shadow: -1px 1px 1px rgb(255, 255, 255);">{{nombre}}</small><br>
+h1{
+color: rgb(9, 255, 0); 
+text-align: left;
+ font-size: large; 
+ font-weight: bold; 
+ position: relative;
+ text-shadow: -1px 1px 1px black;
+ margin-top: 2%; 
+ margin-bottom: 0%;
+}
+.empleados-info-card{
+background-color: rgb(205, 209, 205);
+align-self: flex-start;
+ padding: 18px; 
+ border-radius: 18px; 
+ margin-top: 15px; 
+ width: fit-content;
 
-     Apellido: <small style="color: rgb(0, 0, 0); font-weight: bold; 
-     text-shadow: -1px 1px 1px rgb(255, 255, 255);">{{apellido}}</small> <br>
+}
+p{
+display: inline-block; 
+flex-direction: column; 
+color: rgb(255, 230, 0);
+font-weight: bold;
+text-shadow: -1px 1px 1px black;
+}
 
-     Edad: <small style="color: rgb(0, 0, 0); font-weight: bold;
-      text-shadow: -1px 1px 1px rgb(255, 255, 255);">
-      
-      {{edad -40 <18 ? 'Es menor de edad ':'Es Mayor de edad'}} </small><br>
+.registro{
+position: relative;
+display: block;
+flex-direction: column;
+justify-self: flex-end;
+right: 3%;
+top: -30% !important;
+margin-bottom: 0% !important;
+gap: 6px;
+width: fit-content !important;
 
-     Empresa: <small style="color: rgb(0, 0, 0); font-weight: bold; 
-     text-shadow: -1px 1px 1px rgb(255, 255, 255);">{{empresa}}</small>
+
+
+}
+
+.registro input{
+  width: 20px;
+}
+
+.registro label{
+color: rgb(252, 252, 252);
+font-weight: bold;
+margin-bottom: 5px; 
+text-shadow: -1px 1px 1px rgb(0, 0, 0),-1px 1px 1px rgb(0, 0, 0);
+font-size: large;
+}
+
+.registrado, .noRegistrado{
+
+position: relative;
+display: flex;
+justify-self: flex-start;
+color: rgb(0, 255, 13);
+font-weight: bold;
+text-shadow: -1px 1px 1px rgb(0, 0, 0);
+margin-bottom: 0;
+ word-wrap: break-word; 
+}
+.noRegistrado{
+color: rgb(255, 0, 21);
+}
+
+</style>
+
+
+<h1>Datos Del Empleado!</h1>
+
+<div class="empleados-info-card">
+ <p>
+     Nombre:  <small>{{nombre}}</small><br>
+
+     Apellido: <small>{{apellido}}</small> <br>
+
+     Edad: 
+     <small>       
+         La edad es: {{ edad }} <br>
+         {{ edad < 18 ? "Es menor de edad" : "Es mayor de edad" }}
+    </small>
+    <br>
+
+    <!-- Empresa: <small>{{ empresaInput.value }}</small> -->
+        Empresa: <small>{{empresa}}</small>
  </p>
+ <div class="intro" >
+ <label class="label-tit-empresa">Introduce La Empresa</label>
+<input type="text" [(ngModel)]="empresa">
 
+  <!-- <input type="text"  #empresaInput (keyup)="0" [disabled]="habilitarCuadroProperty"> -->
+   <!-- <input type="button" value="Enviar" (click)="llamar_empresa(empresaInput.value)"> -->
+ </div>
+</div>
+<div class="registro">
+  <h4 class="estado-inicial" [class.registrado]="userRegistedProperty"
+    [class.noRegistrado]="!userRegistedProperty">
+    
+  {{ textoDeRegistro }}
+</h4>
+
+  <label>Registrado: </label>
+
+  <!-- <input
+    type="checkbox"
+    [checked]="userRegistedProperty"
+    (click)="setUsuarioRegistrado()"
+  > -->
+    <input
+    type="radio" value="si" name="ok-selected"
+    [checked]="userRegistedProperty"
+    (click)="setUsuarioRegistrado($event)"
+  >
+    <input
+    type="radio" value="no" name="ok-selected" 
+    (click)="setUsuarioRegistrado($event)">
 </div>
 
 

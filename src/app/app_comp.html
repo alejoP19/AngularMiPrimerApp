@@ -1,16 +1,22 @@
 
-<style>
-  :host {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: block;
-    height: 100dvh;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
 
+ 
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+       "Segoe UI Symbol";
+    
+}
   h1 {
     font-size:xx-large;
     font-weight: bold;
@@ -23,15 +29,13 @@
   }
 
 
-  main {
-    width: 100%;
+  nav {
+    max-width: 100%;
     min-height: fit-content;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 15px;
-    box-sizing: inherit;
-    position: relative;
     background-color: rgb(255, 111, 154);
   }
 
@@ -56,9 +60,21 @@ font-weight: bold;
 
 }
 .componentes{
-  margin-top: 50px;
-display: inline-flex;
-gap: 10px;
+position: relative;
+display: flex;
+justify-content: center;
+justify-self: center;
+min-height: fit-content;
+max-height: max-content;
+gap: 20px;
+background-color: rgba(67, 3, 110, 0.541);
+border-radius: 18px;
+padding: 15px;
+margin-top: 10px;
+margin-bottom: 10%;
+
+
+
 
 }
   @media screen and (max-width: 650px) {
@@ -69,21 +85,28 @@ gap: 10px;
 
   }
 </style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <h1>Hello, {{ title() }}</h1>
-      <p>¡Estas En Linea! 🎉</p> <br>
+</head>
+<body>
+  
+  <nav class="main">
+    <div class="content">
+      <div class="left-side">
+        <h1>Hello, {{ title() }}</h1>
+        <p>¡Estas En Linea! 🎉</p> <br>
+      </div>
     </div>
+    <h2 class="saludo">{{saludo}}</h2>
+  </nav>
+  
+  <div class="componentes">
+    <app-empleados></app-empleados>
+    <!-- <app-empleado></app-empleado>
+    <app-empleado></app-empleado>
+    <app-empleado></app-empleado> -->
+  
   </div>
-  <h2 class="saludo">{{saludo}}</h2>
-</main>
-<app-empleados></app-empleados>
-<div class="componentes">
-  <app-empleado></app-empleado>
-  <app-empleado></app-empleado>
-  <app-empleado></app-empleado>
 
-</div>
 <router-outlet></router-outlet>
+</body>
+</html>
+
